@@ -1,0 +1,38 @@
+présentation du programme Putty : permet de se connecter à un serveur à partir de Windows de manière sécurisée
+(SSH)
+
+Adresse IP : 10.213.93.125 (machine virtuelle, émule une version de Linux)
+Port : 22
+
+Dans un premier temps : connexion à un compte utilisateur
+Login :
+Mot de passe : workshop
+
+nomutilisateur@nommachine:dossierUtilisateur
+
+Commandes => effectuer des actions
+
+-ls
+-cd cd..   	
+-touch
+-mkdir
+-cp -R
+-mv 
+-rm -r
+-pwd
+-clear
+	-history
+	-exit
+parler de l'autocomplétion (tab)
+fleche du haut fleche du bas pour retrouver les commandes tapées auparavant 
+-nano -miA
+-cat ou -less
+-man
+-grep
+-sort
+-wc
+-ip addr
+
+
+
+
