@@ -1,0 +1,5 @@
+Commandes de base Linux
+Script shell (bash)
+GIT (outil de versionning de projet de développement)
+PuTTy (connexion sécurisée à un serveur distant) avec vos VMs
+Optimiser son navigateur web (Firefox)

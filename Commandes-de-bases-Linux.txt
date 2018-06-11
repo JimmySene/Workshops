@@ -1,0 +1,45 @@
+Présentation de la première ligne que l'on voit dans la console
+
+cd : se déplacer
+pwd : chemin du dossier actuel
+ls : voir les fichiers et dossiers du dossier dans lequel on se situe (tout est fichier dans Linux)
+	-a : voir les fichiers cachés (qui commencent par des points)
+	-l : sous forme de liste avec des infos supplémentaires (notamment les droits)
+cat / less / head / tail : voir le contenu du fichier
+nano : éditer le contenu du fichier
+	-m : utiliser la souris
+touch : créer un fichier / mettre à jour la date de modification
+mkdir : créer un dossier
+rm : supprimer / renommer un fichier
+	-R dossier
+cp : copie
+	-r dossier
+mv : déplacer un fichier
+
+grep recherche nomFichier : recherche un mot
+	-n : numero de ligne
+	-i : pas sensible à la casse
+	-r : recherche dans le contenu du dossier
+
+sort nomFichier : trier le fichier 
+	-o : enregistrer le résultat
+
+clear : nettoie la console
+history : affiche la liste des commandes effectuées
+
+whatis : description de la commande
+man : manuel de la commande
+
+chmod nbDroit nomFichier : modifier les droits d'un fichier (777 tous les droits pour tous, 774 tous les droits pour nous, lecture pour autres)
+	-R : appliquer aux dossiers enfants
+	chmod +x script.sh
+
+ip addr : affiche les infos réseaux dont adresse IP
+
+exit : sortir de votre session
+
+sudo : droits d'admin
+
+apt-get / yum install nomPaquet : installer un nouveau programme
+
+halt : arreter le système
