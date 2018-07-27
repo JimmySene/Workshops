@@ -1,3 +1,5 @@
+========= PARTIE 1 ==========
+
 Présentation de la première ligne que l'on voit dans la console
 
 cd : se déplacer
@@ -21,18 +23,11 @@ grep recherche nomFichier : recherche un mot
 	-i : pas sensible à la casse
 	-r : recherche dans le contenu du dossier
 
-sort nomFichier : trier le fichier 
-	-o : enregistrer le résultat
-
 clear : nettoie la console
 history : affiche la liste des commandes effectuées
 
 whatis : description de la commande
 man : manuel de la commande
-
-chmod nbDroit nomFichier : modifier les droits d'un fichier (777 tous les droits pour tous, 774 tous les droits pour nous, lecture pour autres)
-	-R : appliquer aux dossiers enfants
-	chmod +x script.sh
 
 ip addr : affiche les infos réseaux dont adresse IP
 
@@ -42,4 +37,73 @@ sudo : droits d'admin
 
 apt-get / yum install nomPaquet : installer un nouveau programme
 
-halt : arreter le système
+========= PARTIE 2 ==========
+
+Ln : liens physiques
+	-s : liens symboliques
+locate et updatedb pour retrouver un fichier
+find : trouver un fichier sur le DD
+w : utilisateurs connectés
+ps : processus en cours
+	-ef
+	-ejH
+top : affichage dynamique des processus
+kill et killall
+
+flux de redirection : > >> 2>&1 2> 2>> |
+
+========= PARTIE 3 ==========
+
+sudo : mode root. 
+
+su nomUser : changer d'utilisateur
+
+sudo adduser nom (DEBIAN) 
+sudo useradd nom (RED HAT) 
+
+Un dossier personnel protégé dans /home est créé avec le nom de l'utilisateur.
+
+sudo passwd nomUser : changer le mot de passe de l'utilisateur
+
+Connaitre les utilisateurs : cat /etc/passwd
+
+sudo deluser -r nom (DEBIAN)
+sudo userdel -r nom (RED HAT)
+
+sudo visudo : modifier les administrateurs du système
+
+sudo addgroup nom (DEBIAN)
+sudo groupadd nom (RED HAT)
+
+sudo delgroup nom (DEBIAN)
+sudo groupdel nom (RED HAT)
+
+Savoir dans quel groupe est un utilisateur : groups nomUser 
+
+Connaitre les groupes : cat /etc/group
+
+sudo usermod nomUser : modifier un utilisateur
+	-l : renomer l'utilisateur
+	-g : changer le groupe de l'utilisateur
+	-G : changer les groupes de l'utilisateur (séparés par des virgules)
+	-a : ajoute l'utilisateur à 1 ou des gorupe(s)
+	EXEMPLE : usermod -G amis, prof patrick
+
+ls -l : voir les droits des fichiers
+
+Explications : r, w et x
+
+sudo chmod XXX nomFichier
+	777 : tous les droits
+	664 ou 660 : lecture / ecriture pour own et group,lecture seule ou rien pour les autres
+	-R : sous dossiers et fichiers
+
+
+sudo chown nomUser:nomGroup nomFichier -> changer le propriétaire d'un fichier
+	-R
+
+su nomUser 
+exit
+
+
+
