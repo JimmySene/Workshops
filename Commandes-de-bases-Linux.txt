@@ -39,7 +39,7 @@ apt-get / yum install nomPaquet : installer un nouveau programme
 
 ========= PARTIE 2 ==========
 
-Ln : liens physiques
+ln : liens physiques
 	-s : liens symboliques
 locate et updatedb pour retrouver un fichier
 find : trouver un fichier sur le DD
@@ -97,6 +97,10 @@ sudo chmod XXX nomFichier
 	777 : tous les droits
 	664 ou 660 : lecture / ecriture pour own et group,lecture seule ou rien pour les autres
 	-R : sous dossiers et fichiers
+
+r = 4
+w = 2
+x = 1
 
 
 sudo chown nomUser:nomGroup nomFichier -> changer le propriétaire d'un fichier
