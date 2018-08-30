@@ -1,0 +1,46 @@
+PostgreSQL est un programme de type client/serveur permettant de gérer des bases de données.
+
+Base de donnée : ensemble structuré de données
+
+Les données sont stockées côté serveur, et le programme permet à un client de se connecter sur la base du serveur pour accéder
+aux données et exécuter les requêtes demandées.
+
+pgAdmin c'est l'interface graphique (client) qui nous permet d'administrer des bases de données PostegreSQL facilement,
+à l'instar de PhpMyAdmin avec MySQL.
+
+Nous partons du principe que vous avez une machine cliente avec pgAdmin 3 installé dessus et une machine serveur avec Postresql 9.5
+
+Dans un premier temps, il faut connecter pgAdmin à la machine serveur pour accéder à la base de donnée que l'on souhaite.
+Il va falloir renseigner plusieurs informations.
+
+File -> Add server
+
+Pour trouver ces informations, rendez-vous sur la machine serveur.
+
+On vérifie d'abord que le service PostgreSQL tourne.
+
+sudo service postegresql status
+On active le service si il est éteint : sudo service pgr-postegresql start
+
+Par défaut, un utilisateur système postgres a été créé et doit être utilisé avec la commande su.
+
+Sinon sur la vm index se connecter avec le user pgr mdp pgr et avoir accès à psql
+
+Si on veut utiliser pgAdmin on récupère l'adresse du serveur avec ip addr et le port avec netstat -pgaunt
+Par défaut le port utilisé est le port 5432
+
+user : usr_pgr
+pass : passwd
+port : 31000
+
+Si il y a une erreur, il faut penser à renseigner l'autorisation de connexion au client en ajoutant une ligne dans le fichier
+pg_hba.conf situé dans le dossier data/param/
+
+host all all IPclient/Port md5
+
+
+
+
+http://wiki.sdsic.ppol.mi/doku.php?id=index:v3:dev
+
+

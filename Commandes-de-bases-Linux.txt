@@ -58,25 +58,25 @@ sudo : mode root.
 
 su nomUser : changer d'utilisateur
 
-sudo adduser nom (DEBIAN) 
-sudo useradd nom (RED HAT) 
+sudo adduser nom : ajouter un utilisateur (DEBIAN)
+sudo useradd nom : ajouter un utilisateur (RED HAT) 
 
 Un dossier personnel protégé dans /home est créé avec le nom de l'utilisateur.
 
-sudo passwd nomUser : changer le mot de passe de l'utilisateur
+sudo passwd nomUser : changer le mot de passe de l'utilisateur (cela permet d'activer le compte)
 
 Connaitre les utilisateurs : cat /etc/passwd
 
-sudo deluser -r nom (DEBIAN)
-sudo userdel -r nom (RED HAT)
+sudo deluser -r nom : supprimer un utilisateur et son dossier personnel (DEBIAN)
+sudo userdel -r nom : supprimer un utilisateur et son dossier personnel (RED HAT)
 
 sudo visudo : modifier les administrateurs du système
 
-sudo addgroup nom (DEBIAN)
-sudo groupadd nom (RED HAT)
+sudo addgroup nom : créer un groupe (DEBIAN)
+sudo groupadd nom : créer un groupe (RED HAT)
 
-sudo delgroup nom (DEBIAN)
-sudo groupdel nom (RED HAT)
+sudo delgroup nom : supprimer un groupe (DEBIAN)
+sudo groupdel nom : supprimer un groupe (RED HAT)
 
 Savoir dans quel groupe est un utilisateur : groups nomUser 
 
@@ -86,12 +86,12 @@ sudo usermod nomUser : modifier un utilisateur
 	-l : renomer l'utilisateur
 	-g : changer le groupe de l'utilisateur
 	-G : changer les groupes de l'utilisateur (séparés par des virgules)
-	-a : ajoute l'utilisateur à 1 ou des gorupe(s)
-	EXEMPLE : usermod -G amis, prof patrick
+	-a : ajoute l'utilisateur à 1 ou des groupe(s)
+	EXEMPLE : usermod -G amis,prof patrick
 
 ls -l : voir les droits des fichiers
 
-Explications : r, w et x
+Explications : r (lecture), w (écriture) et x (execution)
 
 sudo chmod XXX nomFichier
 	777 : tous les droits
@@ -106,8 +106,5 @@ x = 1
 sudo chown nomUser:nomGroup nomFichier -> changer le propriétaire d'un fichier
 	-R
 
-su nomUser 
-exit
-
-
+exit : fermer la session courante
 
