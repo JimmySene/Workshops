@@ -38,7 +38,10 @@ pg_hba.conf situé dans le dossier data/param/
 
 host all all IPclient/Port md5
 
+CREATE USER usr_test WITH ENCRYPTED PASSWORD 'test' CREATEDB CREATEROLE;
+CREATE DATABASE db_test OWNER usr_test;
 
+GRANT SELECT, INSERT, UPDATE, DELETE ON nom_table TO usr_test;
 
 
 http://wiki.sdsic.ppol.mi/doku.php?id=index:v3:dev
