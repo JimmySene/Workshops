@@ -6,7 +6,7 @@ Les données sont stockées côté serveur, et le programme permet à un client de se
 aux données et exécuter les requêtes demandées.
 
 pgAdmin c'est l'interface graphique (client) qui nous permet d'administrer des bases de données PostegreSQL facilement,
-à l'instar de PhpMyAdmin avec MySQL.
+à l'instar de PhpMyAdmin avec MySQL. On peut aussi utiliser un client en ligne de commande appelé PSQL.
 
 Nous partons du principe que vous avez une machine cliente avec pgAdmin 3 installé dessus et une machine serveur avec Postresql 9.5
 
@@ -14,11 +14,14 @@ Dans un premier temps, il faut connecter pgAdmin à la machine serveur pour accéd
 Il va falloir renseigner plusieurs informations.
 
 File -> Add server
+Explication des différents champs sur l'écran
 
-Pour trouver ces informations, rendez-vous sur la machine serveur.
+Si Pgadmin est sur la même machine que le serveur postgre, alors IP = localhost et Port = 5432
+Si ce n'est pas le cas, alors rendez-vous sur la machine serveur.
 
 On vérifie d'abord que le service PostgreSQL tourne.
 
+CONNEXION ROOT
 sudo service postegresql status
 On active le service si il est éteint : sudo service pgr-postegresql start
 
@@ -33,10 +36,36 @@ user : usr_pgr
 pass : passwd
 port : 31000
 
+Le port se trouve aussi dans le fichier postgresql.conf où on doit décommenter la ligne des connexions extérieures en renseignant *.
+
 Si il y a une erreur, il faut penser à renseigner l'autorisation de connexion au client en ajoutant une ligne dans le fichier
 pg_hba.conf situé dans le dossier data/param/
 
 host all all IPclient/Port md5
+
+Redémarer le service : sudo service postgresql restart
+(voir dans systemd
+
+CONNEXION PGADMIN
+Explication d'une BDD (table, champs, entrées, schémas)
+Création d'une table
+Création des colonnes
+Présentation des types
+Clef primaire
+Voir les données et en enregistrer de nouvelles dans la table
+
+Console query
+
+Présentation de PSQL
+
+psql -h ip -p port -U user -d database
+
+\? \h \g \q
+
+psql -f cheminDuFichierSQL
+psql -c "requete;"
+
+Connexion psql en super admin pour faire ce qui suit (psql -U super) : 
 
 CREATE USER usr_test WITH ENCRYPTED PASSWORD 'test' CREATEDB CREATEROLE;
 CREATE DATABASE db_test OWNER usr_test;
